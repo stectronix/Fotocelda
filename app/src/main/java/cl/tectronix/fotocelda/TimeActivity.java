@@ -35,7 +35,7 @@ public class TimeActivity extends AppCompatActivity implements View.OnClickListe
 
         tuneThread = new TuneThread();
 
-        Thread chrono = new Thread(new Runnable() {
+        final Thread chrono = new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
@@ -113,6 +113,7 @@ public class TimeActivity extends AppCompatActivity implements View.OnClickListe
                 isOn = false;
                 tuneThread.stopTune();
                 btnStart.setEnabled(true);
+                mili = 0; minute = 0; sec = 0;
                 break;
         }
     }
